@@ -1,0 +1,52 @@
+.nav {
+    width: 100vw;
+    height: calc(100vh - 56px);
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: $black;
+
+    @include media-breakpoint-up(md) {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: relative;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        margin: 16px 0 0;
+        padding: 0;
+        list-style: none;
+
+        @include media-breakpoint-up(md) {
+            flex-direction: row;
+            margin: 0;
+        }
+    }
+
+    &__link {
+        display: block;
+        padding: 14px 0;
+        color: $white;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: $transition;
+
+        &:hover {
+            background-color: $green;
+            color: $white;
+        }
+
+        @include media-breakpoint-up(md) {
+            padding: 31px 24px;
+        }
+    }
+}

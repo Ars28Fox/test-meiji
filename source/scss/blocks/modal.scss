@@ -1,0 +1,89 @@
+.modal-dialog {
+    max-width: 540px;
+    border: 2px solid $green;
+    box-shadow: 0px 0px 20px 0px #77B90080;
+
+    @include media-breakpoint-down(md) {
+        max-width: 463px;
+    }
+
+}
+
+.modal-content {
+    background-color: $black;
+    border-radius: none;
+    padding: 0;
+}
+
+.modal-body {
+    padding: 73px 95px;
+
+    @include media-breakpoint-down(md) {
+        padding: 35px 45px;
+    }
+
+    &__title {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+.close {
+    width: 20px;
+    height: 20px;
+    @include flex-center;
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+
+    &::before {
+        content: "";
+        width: 25px;
+        height: 2px;
+        border-radius: 2px;
+        background-color: $white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        transition: background-color $transition;
+    }
+
+    &::after {
+        content: "";
+        width: 25px;
+        height: 2px;
+        border-radius: 2px;
+        background-color: $white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        transition: background-color $transition;
+    }
+
+    &:hover {
+        &::before,
+        &::after {
+            background-color: $green;
+        }
+    }
+}
+
+.modal-form {
+    @include flex-center;
+    flex-direction: column;
+
+    &__input {
+        margin-bottom: 20px;
+    }
+
+    &__btn {
+        max-width: 192px;
+    }
+}

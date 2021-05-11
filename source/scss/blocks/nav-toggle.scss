@@ -1,0 +1,31 @@
+.nav-toggle {
+    width: 56px;
+    height: 56px;
+    @include flex-center;
+    flex-direction: column;
+    margin-right: -15px;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    transition: background-color $transition;
+
+    @include media-breakpoint-up(md) {
+        display: none;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &.active {
+        background-color: $green;
+    }
+
+    & span {
+        width: 27px;
+        height: 2px;
+        border-radius: 1px;
+        margin: 2px 0;
+        background-color: $white;
+    }
+}

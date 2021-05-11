@@ -1,0 +1,102 @@
+.promo {
+    padding: 60px 0;
+    background: url('../img/promo-bg-mobile.jpg') no-repeat center;
+    background-size: cover;
+
+    @include media-breakpoint-up(sm) {
+        background: url('../img/promo-bg.jpg') no-repeat center;
+        background-size: cover;
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding: 60px 0 123px;
+    }
+
+    &__wrap {
+        @include flex-center;
+        flex-direction: column;
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    &__desc {
+        max-width: 720px;
+        text-align: center;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0 0 50px;
+        padding: 0;
+        list-style: none;
+
+        @include media-breakpoint-up(lg) {
+            margin: 0 -15px 50px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 50px;
+        &:hover {
+            & .promo__item-logo>svg {
+                & path:first-child {
+                    fill: rgba($green, 0.25);
+                    stroke: $green;
+                }
+            }
+        }
+
+        @include media-breakpoint-up(sm) {
+            width: calc(50% - 10px);
+        }
+
+        @include media-breakpoint-up(md) {
+            width: calc(50% - 15px);
+        }
+
+        @include media-breakpoint-up(lg) {
+            width: calc(25% - 30px);
+            margin: 50px 15px 0;
+        }
+    }
+
+    &__item-title {
+        margin-bottom: 12px;
+        text-align: center;
+        & span {
+            color: $green;
+        }
+    }
+
+    &__item-logo {
+        width: 160px;
+        height: 90px;
+        margin-bottom: 28px;
+        @include flex-center;
+
+        & svg {
+            width: 151px;
+            height: 71px;
+
+            & path {
+                transition: $transition;
+            }
+        }
+    }
+
+    &__btn {
+        max-width: 290px;
+
+        @include media-breakpoint-up(lg) {
+            max-width: 192px;
+        }
+    }
+}

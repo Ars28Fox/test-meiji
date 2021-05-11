@@ -1,0 +1,41 @@
+.social {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+
+    & li:not(:first-child) {
+        margin-left: 12px;
+    }
+
+    &__link {
+        width: 48px;
+        height: 48px;
+        @include flex-center;
+
+        &:hover {
+            & svg {
+                fill: $green;
+            }
+        }
+
+        & svg {
+            fill: $gray;
+            transition: fill $transition;
+        }
+
+        &--twitter {
+            & svg {
+                width: 30px;
+                height: 24px;
+            }
+        }
+
+        &--instagram {
+            & svg {
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
+}
